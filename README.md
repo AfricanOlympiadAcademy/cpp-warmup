@@ -334,3 +334,6 @@ Anywhere: Isanda(20) at 2 and 9  Karimi(31) at 5 and 6
 3. Print things out to see what is happening: `cout << x << "\n";`
 4. Run the failing part by hand on paper, the way you have done trace tables
    all term. It works the same here.
+
+## Submission
+Submit the repo link to this [google form](https://docs.google.com/forms/d/e/1FAIpQLSeYDjXXHP4yP0RYl9Di-FW-fRQNDofKskJ4W_uOGFPcGd798w/viewform?usp=preview)
