@@ -1,0 +1,8 @@
+# Compiled output never belongs in a repository — it is built from the
+# source, it is different on every machine, and it is large. This is why
+# nearly every repo you will ever see has a file like this one.
+run
+a.out
+*.o
+*.exe
+.DS_Store
