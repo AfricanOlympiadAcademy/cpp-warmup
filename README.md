@@ -64,8 +64,7 @@ you about a bug it can see and you cannot.
 
 # Core questions
 
-Five questions. Each one asks you to hold more than one thing in your head at
-once — that is the point of them.
+Six questions. 
 
 ## Q1 · The weighing session
 
@@ -335,6 +334,3 @@ Anywhere: Isanda(20) at 2 and 9  Karimi(31) at 5 and 6
 3. Print things out to see what is happening: `cout << x << "\n";`
 4. Run the failing part by hand on paper, the way you have done trace tables
    all term. It works the same here.
-5. Ask anyone anything about how the **language** works. Just type the code
-   yourself — reading C++ and writing C++ are different skills, and only one of
-   them is any use next week.
