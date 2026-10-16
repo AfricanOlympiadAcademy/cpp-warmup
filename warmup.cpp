@@ -15,6 +15,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <map>
 using namespace std;
 
 /**
@@ -37,7 +38,7 @@ struct Delivery {
 vector<double> morningWeights = {
     45.5, 80.0, 12.0, -3.0, 66.5, 20.0, 31.0, 95.0, 50.0, 18.5, 0.0, 72.0
 };
-
+int findFarmer(const vector<Delivery> &log, string name);
 // Q2, Q3, Q4, Q7, Q8 — the day's logbook
 vector<Delivery> logbook = {
     {"Keza",    45.5, 'A'},
@@ -212,14 +213,31 @@ int main() {
     //  Q3  ·  WHO IS WHO                    (see README)
     //  Uses: logbook, and the findFarmer function you write below main
     // =================================================================
-
+    count = 0;
+    map<string,int> frequency = {};
+    map<string,double> Total_individual_weight ={};
+    while (count < logbook.size()){
+        auto it = frequency.find(logbook[count].farmer);
+        auto ob = Total_individual_weight.find(logbook[count].farmer);
+        if(it == frequency.end()){
+            frequency.insert({logbook[count].farmer,1});
+        }
+        else{
+            frequency[logbook[count].farmer] += 1;
+        }
+        if(ob == Total_individual_weight.end()){
+            Total_individual_weight.insert({logbook[count].farmer,logbook[count].kg});
+        }
+        else{
+            Total_individual_weight[logbook[count].farmer] += logbook[count].kg;
+        }
+        count++;
+    }
     cout << "=== Q3 ===\n";
-
-
-
-
-
-    cout << "\n";
+    cout << "findFarmer(Isanda) = " << findFarmer(logbook, "Isanda") << "\n";
+    cout << "findFarmer(Mukamana) = " << findFarmer(logbook, "Mukamana") << "\n";
+    cout << "Most deliveries: " << frequency.rbegin()-> first << " (" << frequency.rbegin()->second << ")"<< "\n";
+    cout << "Most kg: "<< Total_individual_weight.rbegin()->first<< " ("<< Total_individual_weight.rbegin()->second<< ")"<<"\n";
 
 
     // =================================================================
@@ -284,9 +302,10 @@ int main() {
 
 
 
-
+    
     return 0;
 }
+
 
 
 // =====================================================================
@@ -305,7 +324,17 @@ int main() {
 //
 // }
 
+int findFarmer ( const vector<Delivery> &log, string name){
+        int i = 0;
+        while (i < log.size()) {
+            if (log[i].farmer == name){
+                return i;
+            }
+            i++;
+        }
+        return -1;
 
+}
 // Q4:  what one delivery earns, before any cap is applied.
 //      Grade A pays 10% above the rate, B pays the rate,
 //      anything else pays 20% below it. The rate is 450.
