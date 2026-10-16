@@ -121,7 +121,37 @@ int main() {
     // =================================================================
 
     cout << "=== Q1 ===\n";
+    double w;
+    double b=0;
+    double tot=0;
+    int bg=1;
+    int vran=0;
+    int vgng=0;
+    int v=0;
+    for (int i=1;i<13;i++){
+        cin>> w;
+        tot+=w;
+        if (w>b){
+            b=w;
+            bg=i;
+        }
+        if (w<1 || w>79){
+            if (vran>vgng){
+                vgng=vran;
+            }
+            vran=0;
 
+        }
+        else{
+            v++;
+            vran++;
+
+        }
+    }    
+cout << "total " << tot << " kg" << std::endl;
+cout << "Valid: " << v << " of 12" << std::endl;
+cout << "Heaviest: " << b << " at position " << bg
+        << endl << "Longest valid run: " << vgng << std::endl;
 
 
 
@@ -135,9 +165,18 @@ int main() {
     // =================================================================
 
     cout << "=== Q2 ===\n";
+/* 
+**Uses:** `logbook` · *structs, loops, if, accumulators, division*
 
+For each grade A, B and C, report how many deliveries there were, their total
+weight, and their average weight. Then say which grade had the best **average**.
 
-
+=== Q2 ===
+Grade A: 6 deliveries, 219.5 kg total, 36.5833 kg average
+Grade B: 3 deliveries, 165 kg total, 55 kg average
+Grade C: 2 deliveries, 62 kg total, 31 kg average
+Best average: grade B
+*/
 
 
     cout << "\n";
