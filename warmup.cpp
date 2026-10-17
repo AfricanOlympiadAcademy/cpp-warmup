@@ -233,12 +233,14 @@ int main() {
         }
         count++;
     }
+    auto most_delivery  = max_element(frequency.begin(), frequency.end(),[](const auto& a, const auto& b){return a.second < b.second;});
+    auto most_kg = max_element(Total_individual_weight.begin(),Total_individual_weight.end(),[](const auto& a, const auto& b){return a.second < b.second;});
+    cout << "this is keza"<<frequency["Keza"] << "\n";
     cout << "=== Q3 ===\n";
     cout << "findFarmer(Isanda) = " << findFarmer(logbook, "Isanda") << "\n";
     cout << "findFarmer(Mukamana) = " << findFarmer(logbook, "Mukamana") << "\n";
-    cout << "Most deliveries: " << frequency.rbegin()-> first << " (" << frequency.rbegin()->second << ")"<< "\n";
-    cout << "Most kg: "<< Total_individual_weight.rbegin()->first<< " ("<< Total_individual_weight.rbegin()->second<< ")"<<"\n";
-
+    cout << "Most deliveries: " << most_delivery-> first << " (" << most_delivery->second << ")"<< "\n";
+    cout << "Most kg: "<< most_kg-> first<< " ("<< most_kg->second<< ")"<<"\n";
 
     // =================================================================
     //  Q4  ·  PAYMENT RUN WITH A DAILY CAP  (see README)
